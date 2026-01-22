@@ -14,7 +14,11 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOriginPatterns("*") // Permite todos los orígenes pero con restricciones de seguridad
+                     
+                        .allowedOrigins(
+                                "http://localhost:4200", 
+                                "https://pizza-frontend-git-main-santiago0238s-projects.vercel.app" // Añade esta línea
+                            )// Permite todos los orígenes pero con restricciones de seguridad
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
